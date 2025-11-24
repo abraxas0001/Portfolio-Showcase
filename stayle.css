@@ -1028,6 +1028,14 @@ body {
     max-width: 400px;
   }
 
+  /* Fix form input curves on phone */
+  .contact-form input,
+  .contact-form textarea {
+    border-radius: 4px; /* Reduce radius to prevent cutoff */
+    padding: 10px 12px; /* Adjust padding for better fit */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  }
+
   html, body {
     overflow-x: hidden;
   }
