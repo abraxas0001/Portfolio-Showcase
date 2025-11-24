@@ -922,7 +922,7 @@ body {
 @media (max-width: 1024px) {
 
   .home, .about, .project, .services, .contact {
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 0 15px;
     text-align: center;
     max-width: 100%;
@@ -946,7 +946,7 @@ body {
     max-width: 220px; 
     height: auto;
     margin-bottom: 20px;
-    position: relative;
+    position: static;
     z-index: 1; 
   }
 
