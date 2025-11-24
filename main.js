@@ -174,9 +174,15 @@ window.addEventListener('scroll', () => {
   if (scrollTop > lastScrollTop && scrollTop > 100) {
     // Scrolling down
     header.style.top = '-100px';
+    if (window.innerWidth <= 768) {
+      themeToggleBtn.style.top = '-50px';
+    }
   } else {
     // Scrolling up
     header.style.top = '0';
+    if (window.innerWidth <= 768) {
+      themeToggleBtn.style.top = '0';
+    }
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
