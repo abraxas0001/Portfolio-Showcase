@@ -168,20 +168,25 @@ themeToggleBtn.addEventListener('click', () => {
 // Hide/show header on scroll
 let lastScrollTop = 0;
 const header = document.querySelector('header');
+let shown = false;
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop && scrollTop > 100) {
-    // Scrolling down
-    header.style.top = '-100px';
-    if (window.innerWidth <= 768) {
-      themeToggleBtn.style.top = '-50px';
-    }
-  } else {
-    // Scrolling up
-    header.style.top = '0';
-    if (window.innerWidth <= 768) {
-      themeToggleBtn.style.top = '0';
+  if (window.innerWidth <= 768) {
+    if (!shown && scrollTop > 10) {
+      header.style.top = '0';
+      themeToggleBtn.style.top = '20px';
+      shown = true;
+    } else if (shown) {
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // scrolling down
+        header.style.top = '-100px';
+        themeToggleBtn.style.top = '-50px';
+      } else {
+        // scrolling up
+        header.style.top = '0';
+        themeToggleBtn.style.top = '20px';
+      }
     }
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
