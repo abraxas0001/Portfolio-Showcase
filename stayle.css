@@ -891,7 +891,7 @@ body {
     box-shadow: 0 4px 12px var(--shadow);
     flex-wrap: nowrap;
     justify-content: flex-start;
-    max-width: calc(100vw - 80px);
+    max-width: 70%;
     overflow-x: auto;
   }
 
