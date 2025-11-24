@@ -75,8 +75,6 @@ This project is licensed under the terms described in the [LICENSE](LICENSE) fil
 ## 📬 Contact
 
 - Email: [Email](mailto:abraxas00010001@gmail.com)   
-- Telegram: [Telegram](https://t.me/TestingAccountHomies)  
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/neelmani-chourasia-3b5ba4240)  
 - GitHub: [GitHub](https://github.com/abraxas0001)  
 - Discord: [Discord](https://discord.com/users/abraxas5520)
 
