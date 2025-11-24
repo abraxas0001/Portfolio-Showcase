@@ -874,7 +874,7 @@ body {
   }
 
   .div-list {
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 10px 20px;
     align-items: center;
   }
@@ -904,13 +904,10 @@ body {
   }
 
   .theme-toggle-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    z-index: 1001;
+    position: static;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
   }
 
   .home, .about, .project, .services, .contact {
