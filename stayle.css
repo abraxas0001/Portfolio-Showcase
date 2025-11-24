@@ -839,8 +839,24 @@ body {
     padding: 10px 20px;
   }
 
+  /* Show a compact vertical nav on small screens so links remain accessible */
   .ul-list {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: fixed;
+    top: 70px;
+    right: 16px;
+    background-color: var(--header-bg);
+    padding: 8px 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px var(--shadow);
+    z-index: 1001;
+    max-width: 220px;
+  }
+
+  .ul-list li {
+    padding: 8px 12px;
   }
 
   .theme-toggle-btn {
@@ -890,6 +906,12 @@ body {
     height: auto;
   }
 
+  /* Reset any fixed bottom offsets for about/profile images on small screens */
+  .about img {
+    bottom: auto;
+    position: relative;
+  }
+
   .btn-home1, .btn-home2, .btn, .btn-send {
     width: 100%;
     text-align: center;
@@ -909,8 +931,9 @@ body {
 
 @media (max-width: 1024px) {
 
+  /* Keep header visible on tablets — use compact layout instead of hiding it */
   header {
-    display: none;
+    display: block;
   }
 
   .home, .about, .project, .services, .contact {
@@ -940,6 +963,11 @@ body {
     margin-bottom: 20px;
     position: relative;
     z-index: 1; 
+  }
+
+  /* Ensure we don't keep an offset that causes overlap */
+  .about img {
+    bottom: auto;
   }
 
   .card .c1 {
