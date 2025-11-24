@@ -10,7 +10,7 @@ It is fully **responsive**, interactive, and visually appealing across desktop, 
 
 ## Live Demo 🚀
 
-You can view the live website here: [Live Demo](https://portfoliotemplate0001.netlify.app/)
+You can view the live website here: [Live Demo](https://portfolio-showcase-abra.vercel.app/)
 
 ---
 
@@ -74,9 +74,11 @@ This project is licensed under the terms described in the [LICENSE](LICENSE) fil
 
 ## 📬 Contact
 
-- Email: [Email](mailto:abraxas00010001@gmail.com)   
-- GitHub: [GitHub](https://github.com/abraxas0001)  
-- Discord: [Discord](https://discord.com/users/abraxas5520)
+- Email: [Email](mailto:[Your Email])   
+- Telegram: [Telegram]([Your Telegram Link])  
+- LinkedIn: [LinkedIn]([Your LinkedIn Link])  
+- GitHub: [GitHub]([Your GitHub Link])  
+- Discord: [Discord]([Your Discord Link])
 
 ---
 
