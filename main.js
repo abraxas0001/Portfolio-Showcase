@@ -167,16 +167,27 @@ themeToggleBtn.addEventListener('click', () => {
 
 // Hide/show header on scroll
 let lastScrollTop = 0;
+let headerShown = false;
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop && scrollTop > 100) {
-    // Scrolling down
-    header.style.transform = 'translateY(-100%)';
-  } else {
-    // Scrolling up
+  
+  // Show header on first scroll
+  if (!headerShown && scrollTop > 0) {
     header.style.transform = 'translateY(0)';
+    headerShown = true;
   }
+  
+  // Existing hide/show logic
+  if (headerShown) {
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up
+      header.style.transform = 'translateY(0)';
+    }
+  }
+  
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
