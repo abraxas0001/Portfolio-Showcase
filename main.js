@@ -188,6 +188,9 @@ window.addEventListener('scroll', () => {
         themeToggleBtn.style.top = '20px';
       }
     }
+  } else {
+    // Desktop: always show header
+    header.style.top = '0';
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
