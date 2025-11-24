@@ -662,6 +662,44 @@ hr {
   }
 }
 
+/* Slide in animations */
+.slide-in-left {
+  animation: slideInLeft 1s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Ensure animations don't cut off on small screens */
+@media (max-width: 768px) {
+  .slide-in-left, .slide-in-right {
+    animation: none; /* Disable animations on small screens to prevent cutoff */
+  }
+}
+
 
 .footer {
   background-color: var(--footer-bg);
@@ -832,58 +870,42 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: transform 0.3s ease;
   }
 
   .div-list {
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 10px 20px;
+    align-items: center;
   }
 
-  /* Show a compact vertical nav on small screens so links remain accessible */
   .ul-list {
     display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    position: fixed;
-    top: 70px;
-    right: 16px;
+    flex-direction: row;
+    gap: 0.5rem;
     background-color: var(--header-bg);
     padding: 8px 12px;
     border-radius: 12px;
-    box-shadow: 0 6px 18px var(--shadow);
-    z-index: 1001;
-    max-width: 220px;
+    box-shadow: 0 4px 12px var(--shadow);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: calc(100% - 70px);
   }
 
   .ul-list li {
-    padding: 8px 12px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .ul-list li a {
+    font-size: 12px;
   }
 
   .theme-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    background: var(--header-bg);
-    border: 2px solid var(--accent);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px var(--shadow);
-    transition: all 0.3s ease;
-    color: var(--accent);
-    font-size: 18px;
-  }
-
-  .theme-toggle-btn:hover {
-    background: var(--accent);
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px var(--shadow);
+    position: static;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 
   .home, .about, .project, .services, .contact {
