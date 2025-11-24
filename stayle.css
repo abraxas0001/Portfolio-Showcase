@@ -39,12 +39,11 @@ body {
 
 header {
   position: fixed;
-  top: 0;
+  top: -100px;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease;
+  transition: top 0.3s ease;
 }
 
 .header-list {
@@ -664,44 +663,6 @@ hr {
   }
 }
 
-/* Slide in animations */
-.slide-in-left {
-  animation: slideInLeft 1s ease-out;
-}
-
-.slide-in-right {
-  animation: slideInRight 1s ease-out;
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Ensure animations don't cut off on small screens */
-@media (max-width: 768px) {
-  .slide-in-left, .slide-in-right {
-    animation: none; /* Disable animations on small screens to prevent cutoff */
-  }
-}
-
 
 .footer {
   background-color: var(--footer-bg);
@@ -869,47 +830,50 @@ body {
   header {
     display: block;
     position: fixed;
-    top: 0;
+    top: -100px;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    transition: transform 0.3s ease;
+    transition: top 0.3s ease;
   }
 
   .div-list {
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 0;
     align-items: center;
   }
 
   .ul-list {
     display: flex;
     flex-direction: row;
-    gap: 0.2rem;
+    gap: 0.1rem;
     background-color: var(--header-bg);
     padding: 4px 6px;
     border-radius: 12px;
     box-shadow: 0 4px 12px var(--shadow);
     flex-wrap: nowrap;
     justify-content: flex-start;
-    max-width: 70%;
-    overflow-x: auto;
+    max-width: calc(100% - 50px);
   }
 
   .ul-list li {
-    padding: 3px 4px;
-    font-size: 10px;
-    white-space: nowrap;
+    padding: 3px 3px;
+    font-size: 8px;
   }
 
   .ul-list li a {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .theme-toggle-btn {
-    position: static;
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
+    position: fixed;
+    top: -50px;
+    right: 20px;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    transition: top 0.3s ease;
   }
 
   .home, .about, .project, .services, .contact {
@@ -957,11 +921,6 @@ body {
 
 @media (max-width: 1024px) {
 
-  /* Keep header visible on tablets — use compact layout instead of hiding it */
-  header {
-    display: block;
-  }
-
   .home, .about, .project, .services, .contact {
     margin: 20px auto;
     padding: 0 15px;
@@ -989,11 +948,6 @@ body {
     margin-bottom: 20px;
     position: relative;
     z-index: 1; 
-  }
-
-  /* Ensure we don't keep an offset that causes overlap */
-  .about img {
-    bottom: auto;
   }
 
   .card .c1 {
@@ -1031,7 +985,7 @@ body {
     width: 100%;
     max-width: 400px;
   }
-
+  
   /* Fix form input curves on phone */
   .contact-form input,
   .contact-form textarea {
