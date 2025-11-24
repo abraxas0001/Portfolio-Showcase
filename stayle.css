@@ -941,6 +941,12 @@ body {
     gap: 1.5rem;
   }
 
+  .service-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
   .about img {
     width: 100%;
     max-width: 220px; 
